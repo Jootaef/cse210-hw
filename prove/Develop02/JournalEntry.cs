@@ -1,6 +1,5 @@
 using System;
 
-// Class to represent a single journal entry
 public class JournalEntry
 {
     public string Date { get; set; }
