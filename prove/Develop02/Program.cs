@@ -1,9 +1,45 @@
-using System;
+﻿using System;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop02 World!");
+        Journal journal = new Journal();
+        string userInput;
+
+        do
+        {
+            Console.WriteLine("\nJournal Menu:");
+            Console.WriteLine("1. Write a New Entry");
+            Console.WriteLine("2. Display the Journal");
+            Console.WriteLine("3. Save the Journal to a File");
+            Console.WriteLine("4. Load the Journal from a File");
+            Console.WriteLine("5. Exit");
+            Console.Write("Choose an option: ");
+
+            userInput = Console.ReadLine();
+
+            switch (userInput)
+            {
+                case "1":
+                    journal.WriteNewEntry();
+                    break;
+                case "2":
+                    journal.DisplayJournal();
+                    break;
+                case "3":
+                    journal.SaveJournalToFile();
+                    break;
+                case "4":
+                    journal.LoadJournalFromFile();
+                    break;
+                case "5":
+                    Console.WriteLine("\nGoodbye!");
+                    break;
+                default:
+                    Console.WriteLine("\nInvalid option. Please try again.");
+                    break;
+            }
+        } while (userInput != "5");
     }
 }
